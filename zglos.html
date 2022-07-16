@@ -74,36 +74,42 @@
 		</div>
 	</section>
 
-<form>          
-<div class="box">             
-<h1>Formularz kontaktowy:</h1>             
-<label>
-<span>Marka oraz model samochodu:</span>                
-<input type="text" class="wpis" name="nazwa" id="nazwa"/>             
-</label>              
-<label>                
-<span>E-mail:</span>
-<input type="text" class="wpis" name="email" id="email"/>             
-</label>              
-<label>                 
-<span>Kosztorys:</span>                 
-<input type="text" class="wpis" name="temat" id="temat"/>             
-</label>      
-<label>                 
-<span>Czy była zawierana ugoda z ubezpieczalnią?</span>                 
-<input type="text" class="wpis" name="temat" id="temat"/>             
-</label>          
-<label>                 
-<span>Opis do sprawy:</span>                 
-<textarea class="wiadomosc" name="wiadomosc" id="tresc"></textarea>                 
-<input type="button" class="button" value="Wyślj" />             
-</label>                                  
-</div>     
-</form>
-			<div class="more_listing">
-				<a href="#" class="more_listing_btn">View More Listings</a>
-			</div>
+	
+
+	<form class="form" id="contactForm" method="post" novalidate action="/send-scripts.php">
+		<div class="form-row">
+			<label for="field-name">Imię i Nazwisko*</label>
+			<input type="text" name="name" required id="field-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
 		</div>
+		<div class="form-row">
+			<label for="field-email">Adres Email*</label>
+			<input type="email" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+		</div>
+		<div class="form-row">
+			<label for="field-message">Marka oraz model samochodu*</label>
+			<textarea name="message" required data-error="Musisz wypełnić pole" id="field-marka" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+"></textarea>
+		</div>
+		<div class="form-row">
+			<label for="field-message">Kosztorys*</label>
+			<textarea name="message" required data-error="Musisz wypełnić pole" id="field-kosztorys" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+"></textarea>
+		</div>
+		<div class="form-row">
+			<label for="field-message">Czy była zawarta umowa z ubezpieczlnią? *</label>
+			<textarea name="message" required data-error="Musisz wypełnić pole" id="field-umowa" pattern=""></textarea>
+		</div>
+		<div class="form-row">
+			<label class="checkbox-cnt">
+				<input type="checkbox" data-error="Musisz wypełnić pole" name="regulation">
+				<i class="state" aria-hidden="true"></i>
+				<span>"checkbox"</span>
+			</label>
+		</div>
+		<div class="form-row">
+			<button type="submit" class="submit-btn">
+				Wyślij
+			</button>
+		</div>
+	</form>
 	</section>	
 
 	<footer>
