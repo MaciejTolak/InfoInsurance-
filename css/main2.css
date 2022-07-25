@@ -88,7 +88,6 @@
 
 .faq-content {
     margin: 0 auto;
-
 }
 
 .faq-question {
@@ -116,7 +115,7 @@
     height: 0;
     overflow: hidden;
     z-index: -1;
-    position: center;
+    position: relative;
     opacity: 0;
     -webkit-transition: .4s ease;
     -moz-transition: .4s ease;
